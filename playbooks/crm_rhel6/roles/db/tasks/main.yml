@@ -1,0 +1,58 @@
+---
+#- name: enable selinux
+#  command: /bin/sed -i -e 's/SELINUX=disabled/SELINUX=permissive/g' /etc/selinux/config
+
+
+#- name: enableselinux
+#  command: /bin/sed -i -e 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config
+
+
+#- name: Now Rebooting
+#  command: reboot
+
+#- pause: minutes=3
+
+
+- name: install mariadb 1 of 9
+  yum: name={{ item }} state=present
+  with_items:
+   - mysql 
+   - mysql-server
+   - libselinux-python
+   - libsemanage-python
+
+
+
+
+- name: Setting selinux for db acces
+  command: setsebool httpd_can_network_connect_db 1
+
+
+- name: Copying mysqlset r script 2 of 9
+  copy: src=mysql_install.sh dest=/tmp/mysql_install.sh mode=0755
+
+- name: Copy sugar db cr users  3 of 9
+  copy: src=scr.sql dest=/tmp/scr.sql  
+
+- name: Copying sugar db insert 4 of 9
+  copy: src=mydbins.sh  dest=/tmp/mydbins.sh  mode=0755
+
+- name: mysql.sh install script 5 of 9 
+  copy: src=mysql.sh  dest=/tmp/mysql.sh mode=0755
+
+
+- name: Copying sname update sql 6 of 9  
+  template: src=sname.sql dest=/tmp/sname.sql
+
+
+- name: Copying sugar crm DB content 7 of 9 
+  copy: src=sugarcrmdb.sql dest=/tmp/sugarcrmdb.sql
+
+- name: running mysql start_config  8 of 9
+  command:  /tmp/mysql_install.sh
+
+- name: run scrm install  8.5 of 9
+  command: /tmp/mydbins.sh
+
+- name: run configure crm   8.75 of 9
+  command: /tmp/mydbins.sh

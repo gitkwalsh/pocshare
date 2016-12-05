@@ -1,0 +1,40 @@
+---
+- name: Copy mbstring
+  copy: src=php-mbstring-5.3.3-26.el6.x86_64.rpm dest=/tmp/php-mbstring-5.3.3-26.el6.x86_64.rpm
+
+#- name: enable selinux
+#  command: /bin/sed -i -e 's/SELINUX=disabled/SELINUX=permissive/g' /etc/selinux/config
+
+#- name: Now Rebooting
+#  command: reboot
+
+#- pause: minutes=2
+
+- name: Setting selinux for db acces
+  command: setsebool httpd_can_network_connect_db 1
+
+- name: install web
+  yum: name={{ item }} state=present
+  with_items:
+   - httpd
+   - wget
+   - php
+   - php-mysql
+   - php-mysql
+   - php-mbstring
+   - php-common
+   - php-gd
+   - php-xml
+
+
+
+- name: Copy sugar CRM Web content to web tier  
+  copy: src=ssc.tar dest=/ssc.tar  
+
+- name: Copying setup.sh
+  template: src=sc_scrm_web_001.sh dest=/tmp/sc_scrm_web_001.sh mode=0755
+
+- name: Install sccrm code and starting http
+  command: /tmp/sc_scrm_web_001.sh
+
+

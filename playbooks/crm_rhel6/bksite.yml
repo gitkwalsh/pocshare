@@ -1,0 +1,12 @@
+---
+# sugar is sweet
+- hosts: db
+  remote_user: root
+  roles:
+    - db
+
+- hosts: web
+  remote_user: root
+  roles:
+    - web
+
