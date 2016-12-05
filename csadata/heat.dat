@@ -1,0 +1,12 @@
+aws_cf_lb_web.template,http://hptools.myhome2k.org/heat/aws_cf_lb_web.template
+lamp_para.template,http://hptools.myhome2k.org/heat/lamp_para.template
+lb_001_6_tier_para.template,http://hptools.myhome2k.org/heat/lb_001_6_tier_para.template
+lb_3web.template,http://hptools.myhome2k.org/heat/lb_3web.template
+new.template,http://hptools.myhome2k.org/heat/new.template
+new2.template,http://hptools.myhome2k.org/heat/new2.template
+ntpfed.template,http://hptools.myhome2k.org/heat/ntpfed.template
+sugar_crm_2_para_tier.template,http://hptools.myhome2k.org/heat/sugar_crm_2_para_tier.template
+ucpdatacenter.template,http://hptools.myhome2k.org/heat/ucpdatacenter.template
+ucpdatacenter2.template,http://hptools.myhome2k.org/heat/ucpdatacenter2.template
+ucpdatacenter3.template,http://hptools.myhome2k.org/heat/ucpdatacenter3.template
+web_001_3_tier_para.template,http://hptools.myhome2k.org/heat/web_001_3_tier_para.template

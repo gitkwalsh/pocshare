@@ -1,0 +1,4 @@
+winpe64!winLonghorn64Guest!Win2008
+winpe64!winLonghorn64Guest!Win2003
+winpe64!winLonghorn64Guest!Win2008_2
+winpe64!winLonghorn64Guest!Winxp

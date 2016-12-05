@@ -1,0 +1,47 @@
+use csadata;
+delete from picklist where ptype='MEM';
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("2","2","2","MEM","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("4","4","4","MEM","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("6","6","6","MEM","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("8","8","8","MEM","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("10","10","10","MEM","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("12","12","12","MEM","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("14","14","14","MEM","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("16","16","16","MEM","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("18","18","18","MEM","");
+
+use csadata;
+delete from picklist where ptype='DISK';
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("8","8","8","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("12","12","12","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("16","16","16","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("20","20","20","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("24","24","24","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("28","28","28","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("32","32","32","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("36","36","36","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("40","40","40","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("44","44","44","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("48","48","48","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("52","52","52","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("56","56","56","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("60","60","60","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("64","64","64","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("68","68","68","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("72","72","72","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("76","76","76","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("80","80","80","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("84","84","84","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("88","88","88","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("92","92","92","DISK","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("96","96","96","DISK","");
+
+use csadata;
+delete from picklist where ptype='CPU';
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("1","1","1","CPU","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("2","2","2","CPU","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("3","3","3","CPU","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("4","4","4","CPU","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("5","5","5","CPU","");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("6","6","6","CPU","");
+

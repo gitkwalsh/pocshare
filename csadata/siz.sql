@@ -1,0 +1,24 @@
+use csadata;
+delete from picklist where ptype='SIZE';
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("1-1-12","1-1-12","1-1-12","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("1-1-22","1-1-22","1-1-22","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("1-1-32","1-1-32","1-1-32","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("1-1-42","1-1-42","1-1-42","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("1-1-52","1-1-52","1-1-52","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("1-1-62","1-1-62","1-1-62","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("1-1-72","1-1-72","1-1-72","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("2-2-12","2-2-12","2-2-12","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("2-2-22","2-2-22","2-2-22","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("2-2-32","2-2-32","2-2-32","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("2-2-42","2-2-42","2-2-42","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("2-2-52","2-2-52","2-2-52","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("2-2-62","2-2-62","2-2-62","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("2-2-72","2-2-72","2-2-72","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("4-4-12","4-4-12","4-4-12","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("4-4-22","4-4-22","4-4-22","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("4-4-32","4-4-32","4-4-32","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("4-4-42","4-4-42","4-4-42","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("4-4-52","4-4-52","4-4-52","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("4-4-62","4-4-62","4-4-62","SIZE","Win");
+insert into picklist (pvalue,pdisplay,pdesc,ptype,ptype1) values ("4-4-72","4-4-72","4-4-72","SIZE","Win");
+
