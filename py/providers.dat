@@ -1,0 +1,10 @@
+id|mediumint(9)|NO|PRI|NULL|auto_increment|
+type|varchar(50)|YES||NULL||
+displayname|varchar(30)|YES||NULL||
+pdescrip|varchar(100)|YES||NULL||
+accesspoint|varchar(150)|YES||NULL||
+userid|varchar(50)|YES||NULL||
+password|varchar(50)|YES||NULL||
+status|varchar(12)|YES||NULL||
+other|varchar(200)|YES||NULL||
+port|varchar(12)|YES||NULL||

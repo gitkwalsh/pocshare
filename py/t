@@ -1,0 +1,14 @@
+<?php
+switch ($_REQUEST['act'])
+  {
+     case "insert":
+         pick_in();
+         break;
+     case "scaleup":
+         cdeploy();
+         break;     
+       case "delete":
+         cdelete();
+         break; 
+         }         
+

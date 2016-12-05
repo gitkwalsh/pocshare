@@ -1,0 +1,9 @@
+function f_start($v_appname)
+{
+        print "<html><head><title>$v_appname</title></head>";
+        print "<FRAMESET ROWS='20%,80%' FRAMEBORDER=NO>\n";
+        print "  <FRAME SRC='unosee.php?act=input' name='input'>\n";
+        print "  <FRAME SRC='unosee.php?act=display' name='bodu'>\n";
+        print "</FRAMESET>\n";
+
+}

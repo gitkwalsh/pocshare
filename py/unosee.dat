@@ -1,0 +1,5 @@
+id|mediumint(9)|NO|PRI|NULL|auto_increment|
+topic|varchar(40)|YES||NULL||
+dkey|varchar(40)|YES||NULL||
+dstuff|varchar(200)|YES||NULL||
+dstuff2|tinytext|YES||NULL||

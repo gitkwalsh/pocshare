@@ -1,0 +1,7 @@
+id|mediumint(9)|NO|PRI|NULL|auto_increment|
+ipaddress|varchar(40)|YES||NULL||
+contextid|varchar(40)|YES||NULL||
+componetid|varchar(40)|YES||NULL||
+nsvrcount|varchar(40)|YES||NULL||
+svrmax|varchar(40)|YES||NULL||
+status|varchar(40)|YES||NULL||
