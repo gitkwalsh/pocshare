@@ -1,0 +1,12 @@
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --instances 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --cores 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --ram 512000 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --floating_ips 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --fixed_ips 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --metadata_items 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --injected_files 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --key_pairs 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --security_groups 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --security_group_rules 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --server_groups 99 
+nova quota-update --user 8ac63b5f9e25448e92cb80167aecb6bf --server_group_members 99 
