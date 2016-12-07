@@ -1,0 +1,77 @@
+description: Docker UCP
+#heat_template_version: '2014-10-16'
+heat_template_version: 2013-05-23
+
+
+parameters:
+  key:
+    type: string
+    description: Name of keypair to assign to server
+    default: key3
+    
+  image:
+    type: string
+    description: Name of image to use for server
+    default: Ubuntu1404
+  flavor:
+    type: string
+    description: Flavor to use for server
+    default: m1.medium
+     
+    
+    
+outputs:
+  ucp_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [ucp, first_address]
+  node_1_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [node1, first_address]
+  node_2_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [node2, first_address]
+  node_3_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [node3, first_address]      
+  node_4_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [node4, first_address]    
+
+    
+    
+resources:
+  ucp:
+    properties: 
+      flavor: {get_param: flavor}
+      image: {get_param: image}
+      key_name: {get_param: key}
+      user_data_format: RAW
+      user_data: |
+        #!/bin/bash
+        echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWGheFCB0l1LWpqbGlGbVMigP5xRes6F4zptr7r3U7dg05HMI5JqymDKEumVNNmh8MCmIuyoOyhpTdVd4g1InCi/Sz62tXYll3ZsY2puhX+sbZOmmqYiJWTOtugOJWyfhQKfdepO/NwGIc+AlwG4LMD31gXxAeYSewimEwKu+Mt1hUfkljmgnksafdJaeGCi99iE8k2lz7fzK9C9bwl7BxwUjOD28kaUihuf7LhoHmPkK0fEah/A9a7UyE0599HI6FuRPEV6onSRyfpfVgbUrGfMHXK4qDpVGo5XDlrgrHnk+wkZUbSstwWIQdoh7rBbQvb2Gz7Nijz7fHMjHb3213 Generated-by-Nova      ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwzcmVqMkCRzMwvQ31Kthz/ZLzTh+ukR3rISC+D9BBDNeY2SIjeKsLTHIcIRkc3tCvj3bEnZNCBDMoKhHVY+hgSNRzsWmEZwxkDKX2s0XCZD+/4EoLeilhhpWDsjLhIcJmiSkRW1pcQrP4BT9OyGo97iXtfiu4/Vk7IMU2vTUbcJPRaR6ds94xViWs1P0Y3P7sGw2ChKUMkOzfJfiwz+gcHgYDzwUcQsdslbEpIzO4Fmgx9sbKbp3q3kYLEtHVMD7BHHhggEDdV0a7jiUlJvwPGlG4/hhWmKyBbMqI8o9/p1OtIvE+z+Veu8+POwrfS2PFCNLSmztztGMdAqJbkXAsw== root@anisim653 " >> /root/.ssh/authorized_keys
+    type: OS::Nova::Server
+  node1:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  node2:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  node3:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  node3:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  node4:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server    

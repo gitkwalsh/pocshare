@@ -1,0 +1,39 @@
+heat_template_version: '2014-10-16'
+outputs:
+  appsvr_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_appserver, first_address]
+  dbsvr_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_db, first_address]
+  websvr_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_web, first_address]
+      
+      
+parameters:
+  flavor: {default: m1.small, description: Type of instance (flavor) to be used, label: Instance
+      Type, type: string}
+  image: {default: Centos7, description: Image to
+      be used for compute instance, label: Image ID, type: string}
+  key: {default: key3, description: Name of key-pair to be used for compute instance,
+    label: Key Name, type: string}
+    
+    
+resources:
+  my_appserver:
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key} }
+    type: OS::Nova::Server
+  my_db:
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key} }
+    type: OS::Nova::Server
+  my_web:
+    depends_on: [my_appserver, my_db]
+    properties:
+      flavor: {get_param: flavor}
+      image: {get_param: image}
+      key_name: {get_param: key}
+    type: OS::Nova::Server

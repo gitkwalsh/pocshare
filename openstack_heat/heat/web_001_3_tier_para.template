@@ -1,0 +1,53 @@
+description: Simple template to deploy a single compute instance
+heat_template_version: '2014-10-16'
+
+
+parameters:
+  key:
+    type: string
+    description: Name of keypair to assign to server
+    default: {get_param: key}
+    
+  image:
+    type: string
+    description: Name of image to use for server
+    default: {get_param: image}
+  flavor:
+    type: string
+    description: Flavor to use for server
+    default: {get_param: flavor}
+     
+    
+    
+outputs:
+
+  web_svr_1_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_web1, first_address]
+  web_svr_2_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_web2, first_address]
+  web_svr_3_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_web3, first_address]      
+
+
+    
+    
+resources:
+   
+  my_web1:
+     
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  my_web2:
+     
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  my_web3:
+     
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server

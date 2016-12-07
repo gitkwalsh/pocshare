@@ -1,0 +1,76 @@
+description: Docker UCP
+#heat_template_version: '2014-10-16'
+heat_template_version: 2013-05-23
+
+
+parameters:
+  key:
+    type: string
+    description: Name of keypair to assign to server
+    default: key3
+    
+  image:
+    type: string
+    description: Name of image to use for server
+    default: Ubuntu1404
+  flavor:
+    type: string
+    description: Flavor to use for server
+    default: m1.medium
+     
+    
+    
+outputs:
+  ucp_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [ucp, first_address]
+  node_1_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [node1, first_address]
+  node_2_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [node2, first_address]
+  node_3_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [node3, first_address]      
+  node_4_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [node4, first_address]    
+
+    
+    
+resources:
+  ucp:
+    properties: 
+      flavor: {get_param: flavor}
+      image: {get_param: image}
+      key_name: {get_param: key}
+      user_data: |
+         str_replace:
+           template: { get_file:  "http://192.168.136.7/heat/os_userdata.sh" }
+    type: OS::Nova::Server
+  node1:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  node2:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  node3:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  node3:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server
+  node4:
+    depends_on: ucp
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server    

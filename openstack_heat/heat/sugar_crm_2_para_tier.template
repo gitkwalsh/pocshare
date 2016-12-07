@@ -1,0 +1,40 @@
+description: 2 tier Sugar CRM
+heat_template_version: '2014-10-16'
+
+
+parameters:
+  key:
+    type: string
+    description: Name of keypair to assign to server
+    default: key3
+    
+  image:
+    type: string
+    description: Name of image to use for server
+    default: centos6
+  flavor:
+    type: string
+    description: Flavor to use for server
+    default: m1.small
+    
+outputs:
+
+  db-svrip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_mysql, first_address]
+  web-svrip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_web1, first_address]
+
+resources:
+  
+  my_mysql:
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}
+    type: OS::Nova::Server    
+
+  my_web1:
+    type: OS::Nova::Server
+    depends_on: my_mysql
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key}}

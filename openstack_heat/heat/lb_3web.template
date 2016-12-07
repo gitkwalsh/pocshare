@@ -1,0 +1,48 @@
+heat_template_version: '2014-10-16'
+outputs:
+  websvr1_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_web1, first_address]
+  websvr2_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_web2, first_address]
+  websvr3_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_web3, first_address]
+  db_ip:
+    description: IP address of the deployed compute instance
+    value:
+      get_attr: [my_db, first_address]      
+      
+      
+parameters:
+  flavor: {default: m1.small, description: Type of instance (flavor) to be used, label: Instance
+      Type, type: string}
+  image: {default: Centos7, description: Image to
+      be used for compute instance, label: Image ID, type: string}
+  key: {default: key3, description: Name of key-pair to be used for compute instance,
+    label: Key Name, type: string}
+    
+    
+resources:
+  my_db:
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key} }
+    type: OS::Nova::Server
+  my_web3:
+    depends_on: [ my_db]
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key} }
+    type: OS::Nova::Server
+  my_web2:
+    depends_on: [ my_db]
+    properties: {flavor: {get_param: flavor}, image: {get_param: image}, key_name: {get_param: key} }
+    type: OS::Nova::Server
+  my_web1:
+    depends_on: [ my_db]
+    properties:
+      flavor: {get_param: flavor}
+      image: {get_param: image}
+      key_name: {get_param: key}
+    type: OS::Nova::Server
